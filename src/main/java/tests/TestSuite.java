@@ -1,4 +1,4 @@
-package epam;
+package tests;
 
 import org.junit.Test;
 import org.junit.experimental.ParallelComputer;

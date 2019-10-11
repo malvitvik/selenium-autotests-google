@@ -1,4 +1,4 @@
-package epam;
+package tests;
 
 import framework.DriverFactory;
 import framework.pages.GoogleHome;

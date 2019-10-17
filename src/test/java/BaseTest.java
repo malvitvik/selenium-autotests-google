@@ -1,5 +1,3 @@
-package tests;
-
 import framework.DriverFactory;
 import framework.pages.GoogleHome;
 import framework.pages.SearchResultsPage;

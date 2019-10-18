@@ -1,20 +1,16 @@
-package framework.pages;
+package cucumber.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class SearchResultsPage extends Page {
     private final By bySearchResults = By.xpath("//div[@class='r']/a[not(@class='fl')]");
     private final By byNext = By.id("pnnext");
     private final By byPrev = By.id("pnprev");
-
-    public SearchResultsPage(WebDriver driver) {
-        super(driver);
-    }
 
     public SearchResultsPage open() {
         return this;
@@ -23,25 +19,25 @@ public class SearchResultsPage extends Page {
     public ResultPage openResultPage(int index) {
         LOG.debug("Open " + index + " page from results.");
         getResults().get(index).click();
-        return new ResultPage(driver);
+        return new ResultPage();
     }
 
     public List<WebElement> getResults() {
-        return driver.findElements(bySearchResults);
+        return $$(bySearchResults);
     }
 
     public void prevPage() {
         LOG.debug("Open previous page with results.");
-        driver.findElement(byPrev).click();
+        $(byPrev).click();
     }
 
     public void nextPage() {
         LOG.debug("Open next page with results.");
-        driver.findElement(byNext).click();
+        $(byNext).click();
     }
 
     public boolean containsResult(String text) {
-        return driver.findElements(By.partialLinkText(text)).size() != 0;
+        return $$(By.partialLinkText(text)).size() != 0;
     }
 
     public boolean containsResult(String text, int pages) {
@@ -54,11 +50,10 @@ public class SearchResultsPage extends Page {
                 return true;
             }
 
-            try {
-                nextPage();
-            } catch (NoSuchElementException e) {
-                return false;
-            }
+            $$(byNext).stream()
+                    .findFirst()
+                    .orElseThrow(() -> new AssertionError("The last search page is reached."))
+                    .click();
         }
 
         return false;

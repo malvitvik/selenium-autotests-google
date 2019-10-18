@@ -1,4 +1,4 @@
-package framework;
+package cucumber.framework;
 
 import java.io.FileInputStream;
 import java.io.IOException;

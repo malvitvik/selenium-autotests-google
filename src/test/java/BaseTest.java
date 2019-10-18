@@ -1,6 +1,6 @@
-import framework.BrowserFactory;
-import framework.pages.GoogleHome;
-import framework.pages.SearchResultsPage;
+import cucumber.framework.BrowserFactory;
+import cucumber.pages.GoogleHome;
+import cucumber.pages.SearchResultsPage;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 
@@ -34,10 +34,11 @@ public class BaseTest {
     }
 
     @Test
+    @Ignore
     public void testFirstLinkInSearch() {
-//        String phrase = "automation";
-        String phrase = "jhkjlktfougyhjipkopiugyjhkjblnjl";
-        SearchResultsPage searchResultsPage = new GoogleHome(driver).open().doSearch(phrase);
+        String phrase = "automation";
+//        String phrase = "jhkjlktfougyhjipkopiugyjhkjblnjl";
+        SearchResultsPage searchResultsPage = new GoogleHome().open().doSearch(phrase);
 
         assertNotEquals("Search page has no results", searchResultsPage.getResults().size(), 0);
         String title = searchResultsPage.openResultPage(0).getTitle();
@@ -45,10 +46,11 @@ public class BaseTest {
     }
 
     @Test
+    @Ignore
     public void Test() {
-//        String phrase = "automation";
-        String phrase = "user ajhddr";
-        SearchResultsPage searchResultsPage = new GoogleHome(driver).open().doSearch(phrase);
+        String phrase = "automation";
+//        String phrase = "user ajhddr";
+        SearchResultsPage searchResultsPage = new GoogleHome().open().doSearch(phrase);
 
         assertNotEquals("Search page has no results", searchResultsPage.getResults().size(), 0);
         assertTrue("'testautomationday.com' hasn't found on first 5 pages.", searchResultsPage.containsResult("testautomationday.com", 5));

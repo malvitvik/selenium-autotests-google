@@ -1,0 +1,167 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "Verify that result\u0027s title contains searched word",
+        "description": "",
+        "id": "search-by-keyword;verify-that-result-s-title-contains-searched-word",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1368639500,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I open Google page",
+            "match": {
+              "location": "GoogleHomeSteps.openGoogleHome()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1813993000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I search for \"jhkjlktfougyhjipkopiugyjhkjblnjl\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "jhkjlktfougyhjipkopiugyjhkjblnjl",
+                  "offset": 14
+                }
+              ],
+              "location": "GoogleHomeSteps.searchForPhrase(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Page has no results. Actual: 0\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failEquals(Assert.java:185)\r\n\tat org.junit.Assert.assertNotEquals(Assert.java:199)\r\n\tat cucumber.steps.SearchResultsPageSteps.openResultPage(SearchResultsPageSteps.java:19)\r\n\tat ✽.open 0 link in search result(src/test/resources/google.feature:7)\r\n",
+              "duration": 10067549900,
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "open 0 link in search result",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 5
+                }
+              ],
+              "location": "SearchResultsPageSteps.openResultPage(int)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 28400,
+              "status": "skipped"
+            },
+            "line": 8,
+            "name": "the page title contains \"automation\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "automation",
+                  "offset": 25
+                }
+              ],
+              "location": "ResultPageTest.containsDomainOnPages(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@1"
+          }
+        ]
+      },
+      {
+        "line": 11,
+        "name": "Verify that \"testautomationday.com\" domain is present on search results pages: 1-5",
+        "description": "",
+        "id": "search-by-keyword;verify-that-\"testautomationday.com\"-domain-is-present-on-search-results-pages:-1-5",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 986158600,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I open Google page",
+            "match": {
+              "location": "GoogleHomeSteps.openGoogleHome()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1592767900,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I search for \"jhkjlktfougyhjipkopiugyjhkjblnjl\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "jhkjlktfougyhjipkopiugyjhkjblnjl",
+                  "offset": 14
+                }
+              ],
+              "location": "GoogleHomeSteps.searchForPhrase(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: Page has no results. Actual: 0\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failEquals(Assert.java:185)\r\n\tat org.junit.Assert.assertNotEquals(Assert.java:199)\r\n\tat cucumber.steps.SearchResultsPageSteps.containsDomainOnPages(SearchResultsPageSteps.java:28)\r\n\tat ✽.\"testautomationday.com\" domain is displayed on pages from 1 to 5(src/test/resources/google.feature:14)\r\n",
+              "duration": 10088938400,
+              "status": "failed"
+            },
+            "line": 14,
+            "name": "\"testautomationday.com\" domain is displayed on pages from 1 to 5",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"testautomationday.com\"",
+                  "offset": 0
+                },
+                {
+                  "val": "1",
+                  "offset": 58
+                },
+                {
+                  "val": "5",
+                  "offset": 63
+                }
+              ],
+              "location": "SearchResultsPageSteps.containsDomainOnPages(String,int,int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@2"
+          }
+        ]
+      }
+    ],
+    "name": "Search by keyword",
+    "description": "",
+    "id": "search-by-keyword",
+    "keyword": "Feature",
+    "uri": "src/test/resources/google.feature",
+    "tags": []
+  }
+]

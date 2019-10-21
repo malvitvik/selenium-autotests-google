@@ -27,16 +27,21 @@ public class SearchResultsPageSteps extends Steps {
         for (int i = fromPage; i <= toPage; i++) {
             Assert.assertNotEquals("Page has no results", 0, searchResultsPage.getResults().size());
             if (searchResultsPage.containsResult(domainWithoutQuotes)) {
+                LOG.debug(domain + " is found on page: " + i);
                 return;
             }
 
             try {
                 searchResultsPage.nextPage();
             } catch (NoSuchElementException e) {
-                fail("The last page is reached. Page: " + i);
+                String message = "The last page is reached. Page: " + i;
+                LOG.error(message);
+                fail(message);
             }
         }
 
-        fail(domain + " isn't displayed on pages from " + fromPage + " to " + toPage);
+        String message = domain + " isn't displayed on pages from " + fromPage + " to " + toPage;
+        LOG.error(message);
+        fail(message);
     }
 }

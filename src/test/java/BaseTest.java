@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
+@Ignore
 public class BaseTest {
 
     static BrowserFactory browserFactory;
@@ -34,7 +35,6 @@ public class BaseTest {
     }
 
     @Test
-    @Ignore
     public void testFirstLinkInSearch() {
         String phrase = "automation";
 //        String phrase = "jhkjlktfougyhjipkopiugyjhkjblnjl";
@@ -46,7 +46,6 @@ public class BaseTest {
     }
 
     @Test
-    @Ignore
     public void Test() {
         String phrase = "automation";
 //        String phrase = "user ajhddr";

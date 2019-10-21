@@ -1,12 +1,13 @@
-import cucumber.CucumberRunner;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.experimental.ParallelComputer;
 import org.junit.runner.JUnitCore;
 
-public class TestSuite {
+@Ignore
+public class CucumberTestSuite {
     @Test
     public void parallelTest() {
-        Class[] cls = {CucumberRunner.class};
+        Class[] cls = {BaseTest.class};
 
         JUnitCore.runClasses(new ParallelComputer(true, true), cls);
     }
